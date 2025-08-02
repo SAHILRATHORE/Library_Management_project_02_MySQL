@@ -44,8 +44,8 @@ Example:
 ```sql
 INSERT INTO books (isbn, book_title, category, rental_price, status, author, publisher)
 VALUES ('978-1-60129-456-2', 'To Kill a Mockingbird', 'Classic', 6.00, 'yes', 'Harper Lee', 'J.B. Lippincott & Co.');
+```
 
----
 ### 2. 🧾 Stored Procedures
 - **issue_book**
     Issues a book to a member only if the book is available.
@@ -56,7 +56,7 @@ VALUES ('978-1-60129-456-2', 'To Kill a Mockingbird', 'Classic', 6.00, 'yes', 'H
 ```sql
 CALL issue_book('IS155', 'C108', '978-0-553-29698-2', 'E104');
 CALL add_return_records('RS138', 'IS135', 'Good');
----
+```
 
 ### 3. 📊 Data Analysis
 Includes queries for:
@@ -70,7 +70,7 @@ Includes queries for:
 - Top-performing employees
 
 - Members with high-risk (damaged) book handling
-
+```sql
 SELECT 
     ist.issued_member_id, m.member_name, bk.book_title, ist.issued_date,
     DATEDIFF(CURRENT_DATE, ist.issued_date) AS over_due_days
@@ -79,7 +79,7 @@ JOIN members AS m ON m.member_id = ist.issued_member_id
 JOIN books AS bk ON bk.isbn = ist.issued_book_isbn
 LEFT JOIN return_status AS rs ON rs.issued_id = ist.issued_id
 WHERE rs.return_date IS NULL AND DATEDIFF(CURRENT_DATE, ist.issued_date) > 30;
-
+```
 
 **📈 Reports & CTAS Usage**
 **CTAS (Create Table As Select) is used to generate dynamic summary tables such as:**
