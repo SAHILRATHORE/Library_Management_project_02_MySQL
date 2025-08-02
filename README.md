@@ -45,7 +45,7 @@ Example:
 INSERT INTO books (isbn, book_title, category, rental_price, status, author, publisher)
 VALUES ('978-1-60129-456-2', 'To Kill a Mockingbird', 'Classic', 6.00, 'yes', 'Harper Lee', 'J.B. Lippincott & Co.');
 
-
+---
 ### 2. 🧾 Stored Procedures
 - **issue_book**
     Issues a book to a member only if the book is available.
@@ -53,9 +53,10 @@ VALUES ('978-1-60129-456-2', 'To Kill a Mockingbird', 'Classic', 6.00, 'yes', 'H
 - **add_return_records**
    Updates the book's status upon return and logs return details with a thank-you message.
 
+```sql
 CALL issue_book('IS155', 'C108', '978-0-553-29698-2', 'E104');
 CALL add_return_records('RS138', 'IS135', 'Good');
-
+---
 
 ### 3. 📊 Data Analysis
 Includes queries for:
