@@ -96,3 +96,10 @@ WHERE rs.return_date IS NULL AND DATEDIFF(CURRENT_DATE, ist.issued_date) > 30;
 ## 👨‍💻 Author
 # Sahil Rathore
 ### Passionate about databases, backend systems, and data analytics.
+
+## 🔗 Connect With Me
+
+- 💼 [LinkedIn](https://www.linkedin.com/in/sahil-rathore-641119245/)
+- 📧 sahilrathore605@gmail.com
+
+
